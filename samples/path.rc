@@ -1,0 +1,2 @@
+PATH="${DEVTK_CONFIG_PATH}/bin:$PATH"
+export PATH

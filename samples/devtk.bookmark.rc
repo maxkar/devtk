@@ -1,0 +1,2 @@
+BOOKMARK_FILE="$DEVTK_CONFIG_PATH/etc/bookmarks.json"
+export BOOKMARK_FILE

@@ -1,0 +1,8 @@
+loadRC "$DEVTK_RC_PATH/path.rc"
+loadRC "$DEVTK_RC_PATH/prompt.rc"
+loadRC "$DEVTK_RC_PATH/devtk.vim.rc"
+loadRC "$DEVTK_RC_PATH/devtk.bookmark.rc"
+
+#Setup general user commands
+alias ~~='cd "$DEVTK_PROJECT_PATH"'
+

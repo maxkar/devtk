@@ -1,0 +1,30 @@
+#!/bin/bash
+
+if [ $# -lt 1 ]; then
+  DEVTK_TMP=`python3 -m devtk.find_env`
+else
+  DEVTK_TMP=`python3 -m devtk.find_env "$1"`
+fi
+
+if [ $? -ne 0 ]; then
+  echo "Failed to find a project"
+  unset DEVTK_TMP
+  return 1
+fi
+
+#Init basic project structure
+DEVTK_PROJECT_PATH="$DEVTK_TMP"
+DEVTK_CONFIG_PATH="$DEVTK_TMP/.devtk"
+DEVTK_RC_PATH="$DEVTK_TMP/.devtk/init.d"
+
+unset DEVTK_TMP
+export DEVTK_PROJECT_PATH DEVTK_ENV_PATH DEVTK_RC_PATH
+
+#Run user-defined devtk.rc scripts
+function loadRC() {
+  if [ -f "$1" ]; then
+	  source "$1"
+  fi
+}
+
+loadRC "$DEVTK_RC_PATH/devtk.rc"

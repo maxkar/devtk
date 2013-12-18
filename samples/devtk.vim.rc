@@ -1,0 +1,2 @@
+alias gvim='gvim -S "$DEVTK_RC_PATH/devtk.vim.vim"'
+alias vim='vim -S "$DEVTK_RC_PATH/devtk.vim.vim"'
